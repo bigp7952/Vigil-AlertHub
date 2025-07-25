@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nouvelle palette de couleurs */
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --card: #ffffff;
+    --card-foreground: #1a1a1a;
+    --popover: #ffffff;
+    --popover-foreground: #1a1a1a;
+    --primary: #d97706;
+    --primary-foreground: #ffffff;
+    --secondary: #f3f4f6;
+    --secondary-foreground: #374151;
+    --muted: #f9fafb;
+    --muted-foreground: #6b7280;
+    --accent: #fbbf24;
+    --accent-foreground: #1f2937;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #d97706;
+    --radius: 0.5rem;
+    
+    /* Couleurs spécifiques à la police */
+    --danger-critical: #dc2626;
+    --danger-medium: #f59e0b;
+    --safe-zone: #10b981;
+    --warning: #f59e0b;
+    --warning-foreground: #ffffff;
+    --success: #10b981;
+    --success-foreground: #ffffff;
+    
+    /* Sidebar */
+    --sidebar-background: #ffffff;
+    --sidebar-foreground: #374151;
+    --sidebar-primary: #d97706;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f3f4f6;
+    --sidebar-accent-foreground: #374151;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #d97706;
+  }
+
+  .dark {
+    --background: #0f0f0f;
+    --foreground: #ededed;
+    --card: #0f0f0f;
+    --card-foreground: #ededed;
+    --popover: #0f0f0f;
+    --popover-foreground: #ededed;
+    --primary: #f97316;
+    --primary-foreground: #0f0f0f;
+    --secondary: #1f2937;
+    --secondary-foreground: #f9fafb;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --accent: #fbbf24;
+    --accent-foreground: #0f0f0f;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #374151;
+    --input: #374151;
+    --ring: #f97316;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.4s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
